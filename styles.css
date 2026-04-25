@@ -1,9 +1,144 @@
-/* CSS by ///ADD/// YOUR NAME */
+/* CSS by Carey Tung */
 
 /* Imported Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 /* ///ADD/// CSS Reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 
 
 /* Root Variables */
@@ -24,10 +159,12 @@ body.light-mode {
   background-color: var(--watchdog-white);
   color: var(--truth-text);
 }
+
 body.dark-mode {
   background-color: var(--truth-text);
   color: var(--watchdog-white);
 }
+
 #theme-toggle {
   position: absolute;
   top: 1rem;
@@ -39,13 +176,271 @@ body.dark-mode {
 }
 
 /* ///ADD/// Skip Link Styles */
+.skip-to-content-link {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-to-content-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+}
 
 /* ///ADD/// Navigation Styles */
+header {
+  background-color: var(--blue-bulletin);
+  padding: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+h1 {
+  font-family: 'Merriweather';
+  color: var(--watchdog-white);
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+header p {
+  font-family: 'Merriweather';
+  color: var(--watchdog-white);
+  font-size: 0.8rem;
+  margin: 1rem 0;
+}
+
+nav {
+  text-transform: uppercase;
+}
+
+.menu-button {
+  display: block;
+  text-align: center;
+  background-color: var(--news-flash);
+  font-family: 'Source Sans 3';
+  color: var(--watchdog-white);
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--news-flash);
+}
+
+.menu-button:hover {
+  background-color: var(--blue-bulletin);
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+  max-height: 0;
+  overflow: hidden;
+  transition: var(--transition);
+  margin-top: 0.25rem;
+}
+
+#menu-toggle:checked+.menu-button+.menu {
+  max-height: 1000px;
+  border: 1px solid var(--news-flash);
+}
+
+.menu li {
+  text-align: center;
+  background-color: var(--news-flash);
+  font-family: 'Source Sans 3';
+  padding: 0.75rem 1rem;
+}
+
+.menu li:hover {
+  background-color: var(--blue-bulletin);
+}
+
+.menu li a {
+  color: var(--watchdog-white);
+  text-decoration: none;
+}
 
 /* ///ADD/// Global Layout Styles */
+main {
+  padding: 1rem;
+}
+
+#about {
+  display: grid;
+  gap: 1rem;
+}
+
+.video-card {
+  display: grid;
+  gap: 0.5rem;
+  justify-items: center;
+  background: var(--news-flash);
+  padding: 1rem;
+  margin: 0.5rem auto;
+  width: 400px;
+  border: 1px solid var(--truth-text);
+  box-shadow: var(--shadow);
+}
+
+.video-card:hover {
+  scale: 101%;
+  transition: var(--transition);
+}
+
+video {
+  width: 400px;
+  height: auto;
+}
+
+.news-card {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  margin: 0.5rem auto;
+  width: 400px;
+  border: 1px solid var(--story-subtitle);
+  box-shadow: var(--shadow);
+  line-height: 1.75rem;
+}
+
+.news-card:hover {
+  scale: 101%;
+  transition: var(--transition);
+}
+
+#subscribe {
+  display: grid;
+  gap: 0.75rem;
+}
+
+form {
+  margin: 0 auto;
+  width: 400px;
+  background-color: var(--news-flash);
+  padding: 1rem;
+  color: var(--watchdog-white);
+  display: grid;
+  gap: 1rem;
+  border: 1px solid var(--truth-text);
+  box-shadow: var(--shadow);
+}
+
+label {
+  margin-bottom: -0.75rem;
+}
+
+#name, #mobile {
+  padding: 0.5rem;
+}
+
+fieldset {
+  display: grid;
+  gap: 1rem;
+  padding: 0.5rem;
+  border: 1px solid var(--blue-bulletin);
+}
+
+fieldset div {
+  display: block;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.75);
+  margin: 0.25rem 0.5rem;
+  accent-color: var(--truth-text);
+}
+
+#financial {
+  margin-bottom: 1rem;
+}
+
+#submit {
+  background-color: var(--blue-bulletin);
+  padding: 1rem;
+  color: var(--watchdog-white);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow);
+}
+
+footer {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: var(--blue-bulletin);
+  padding: 1rem;
+}
+
+footer h2, footer p {
+  grid-column: 1/-1;
+}
+
+footer a {
+  background-color: var(--news-flash);
+  color: var(--watchdog-white);
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1rem 0;
+
+}
 
 /* ///ADD/// Global Text Styles */
+h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--truth-text);
+  margin: 2rem auto auto 0;
+}
 
+h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--truth-text);
+}
+
+p {
+  font-family: var(--font-body);
+  color: var(--truth-text);
+}
+
+#about h2, #about p {
+  line-height: 1.5rem;
+}
+
+blockquote {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+#breaking h3 {
+  font-weight: 300;
+  border-bottom: 1px solid var(--watchdog-white);
+}
+
+#breaking h3, #breaking p {
+  color: var(--watchdog-white);
+  line-height: 1.75rem;
+}
+
+.news-card h3 {
+  border-bottom: 1px solid var(--story-subtitle);
+}
+
+legend {
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+footer h2, footer p {
+  color: var(--watchdog-white);
+}
+
+footer p {
+  text-align: center;
+}
 
 /* ///ADD/// medium styles 620px */
 
@@ -60,6 +455,4 @@ body.dark-mode {
 
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
-@supports (selector(:has(*))) {
-
-}
+@supports (selector(:has(*))) {}
