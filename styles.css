@@ -218,6 +218,7 @@ nav {
 
 .menu-button {
   display: block;
+  width: 27rem;
   text-align: center;
   background-color: var(--news-flash);
   font-family: 'Source Sans 3';
@@ -227,22 +228,26 @@ nav {
 }
 
 .menu-button:hover {
+  cursor: pointer;
   background-color: var(--blue-bulletin);
+  transition: var(--transition);
 }
 
 .menu {
+  position: absolute;
+  width: 29rem;
+  background: var(--blue-bulletin);
   display: grid;
-  grid-template-columns: 1fr;
   gap: 2px;
   max-height: 0;
   overflow: hidden;
   transition: var(--transition);
-  margin-top: 0.25rem;
+  margin-top: 1rem;
 }
 
 #menu-toggle:checked+.menu-button+.menu {
-  max-height: 1000px;
   border: 1px solid var(--news-flash);
+  max-height: 1000px;
 }
 
 .menu li {
@@ -253,6 +258,7 @@ nav {
 }
 
 .menu li:hover {
+  cursor: pointer;
   background-color: var(--blue-bulletin);
 }
 
@@ -284,6 +290,7 @@ main {
 }
 
 .video-card:hover {
+  cursor: pointer;
   scale: 101%;
   transition: var(--transition);
 }
@@ -305,6 +312,7 @@ video {
 }
 
 .news-card:hover {
+  cursor: pointer;
   scale: 101%;
   transition: var(--transition);
 }
@@ -330,7 +338,8 @@ label {
   margin-bottom: -0.75rem;
 }
 
-#name, #mobile {
+#name,
+#mobile {
   padding: 0.5rem;
 }
 
@@ -351,6 +360,10 @@ input[type="checkbox"] {
   accent-color: var(--truth-text);
 }
 
+input[type="checkbox"]:hover {
+  cursor: pointer;
+}
+
 #financial {
   margin-bottom: 1rem;
 }
@@ -364,16 +377,21 @@ input[type="checkbox"] {
   box-shadow: var(--shadow);
 }
 
+#submit:hover {
+  cursor: pointer;
+  background-color: var(--watchdog-white);
+  color: var(--blue-bulletin);
+}
+
 footer {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
   background-color: var(--blue-bulletin);
   padding: 1rem;
 }
 
-footer h2, footer p {
-  grid-column: 1/-1;
+footer div {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 footer a {
@@ -381,8 +399,14 @@ footer a {
   color: var(--watchdog-white);
   text-align: center;
   text-transform: uppercase;
-  padding: 1rem 0;
+  padding: 1rem 0.5rem;
+  margin: 0.5rem;
+}
 
+footer a:hover {
+  scale: 105%;
+  transition: var(--transition);
+  cursor: pointer;
 }
 
 /* ///ADD/// Global Text Styles */
@@ -404,7 +428,8 @@ p {
   color: var(--truth-text);
 }
 
-#about h2, #about p {
+#about h2,
+#about p {
   line-height: 1.5rem;
 }
 
@@ -420,7 +445,8 @@ blockquote {
   border-bottom: 1px solid var(--watchdog-white);
 }
 
-#breaking h3, #breaking p {
+#breaking h3,
+#breaking p {
   color: var(--watchdog-white);
   line-height: 1.75rem;
 }
@@ -434,7 +460,8 @@ legend {
   margin-bottom: 0.5rem;
 }
 
-footer h2, footer p {
+footer h2,
+footer p {
   color: var(--watchdog-white);
 }
 
@@ -443,6 +470,27 @@ footer p {
 }
 
 /* ///ADD/// medium styles 620px */
+@media only screen and (min-width: 620px) {
+
+  #menu-toggle,
+  .menu-button {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    display: flex;
+    gap: 1rem;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    width: 100%;
+    max-height: none;
+    overflow: visible;
+    margin-top: 1rem;
+  }
+
+}
 
 
 /* ///ADD/// large styles 920px */
