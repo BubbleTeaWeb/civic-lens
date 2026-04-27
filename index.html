@@ -164,11 +164,15 @@
       <p>Receive text messages with the news you want to know.</p>
 
       <form action="https://wp.zybooks.com/form-viewer.php" method="POST">
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" required>
+        <div class="text-input">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required>
+        </div>
 
-        <label for="mobile">Mobile</label>
-        <input id="mobile" name="mobile" type="tel" required>
+        <div class="text-input">
+          <label for="mobile">Mobile</label>
+          <input id="mobile" name="mobile" type="tel" required>
+        </div>
 
         <fieldset>
           <legend>Notification Preferences</legend>
@@ -209,13 +213,13 @@
 
   <footer>
     <h2>Follow Us</h2>
-    <div>
-      <a>Twitter/X</a>
-      <a>Instagram</a>
-      <a>YouTube</a>
-      <a>TikTok</a>
-      <a>LinkedIn</a>
-    </div>
+    <ul>
+      <li><a>Twitter/X</a></li>
+      <li><a>Instagram</a></li>
+      <li><a>YouTube</a></li>
+      <li><a>TikTok</a></li>
+      <li><a>LinkedIn</a></li>
+    </ul>
 
     <p>&copy; 2025 Civic Lens. All rights reserved.</p>
   </footer>
