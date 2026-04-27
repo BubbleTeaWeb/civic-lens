@@ -610,7 +610,15 @@ footer p {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none;
+  }
+}
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
-@supports (selector(:has(*))) {}
+@supports (selector(:has(*))) {
+  .mobile-nav:has(#menu-toggle:checked) .menu {
+    display: block;
+  }
+}
