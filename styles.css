@@ -218,13 +218,15 @@ nav {
 
 .menu-button {
   display: block;
-  width: 27rem;
+  width: 95%;
   text-align: center;
   background-color: var(--news-flash);
   font-family: 'Source Sans 3';
   color: var(--watchdog-white);
   padding: 0.75rem 1rem;
   border: 1px solid var(--news-flash);
+  margin-bottom: 0.25rem;
+  transition: var(--transition);
 }
 
 .menu-button:hover {
@@ -235,7 +237,7 @@ nav {
 
 .menu {
   position: absolute;
-  width: 29rem;
+  width: 92%;
   background: var(--blue-bulletin);
   display: grid;
   gap: 2px;
@@ -255,11 +257,13 @@ nav {
   background-color: var(--news-flash);
   font-family: 'Source Sans 3';
   padding: 0.75rem 1rem;
+  transition: var(--transition);
 }
 
 .menu li:hover {
   cursor: pointer;
   background-color: var(--blue-bulletin);
+  transition: var(--transition);
 }
 
 .menu li a {
@@ -268,8 +272,9 @@ nav {
 }
 
 /* ///ADD/// Global Layout Styles */
+header,
 main {
-  padding: 1rem;
+  padding: 1rem 5%;
 }
 
 #about {
@@ -279,18 +284,19 @@ main {
 
 .video-card {
   display: grid;
-  gap: 0.5rem;
+  gap: 16px;
   background: var(--news-flash);
   padding: 1rem;
   margin: 0.5rem auto;
   width: 25rem;
   border: 1px solid var(--truth-text);
   box-shadow: var(--shadow);
+  transition: var(--transition);
 }
 
 .video-card:hover {
   cursor: pointer;
-  scale: 101%;
+  scale: 103%;
   transition: var(--transition);
 }
 
@@ -301,18 +307,19 @@ video {
 
 .news-card {
   display: grid;
-  gap: 0.5rem;
+  gap: 16px;
   padding: 1rem;
   margin: 0.5rem auto;
   width: 20rem;
   border: 1px solid var(--story-subtitle);
   box-shadow: var(--shadow);
   line-height: 1.75rem;
+  transition: var(--transition);
 }
 
 .news-card:hover {
   cursor: pointer;
-  scale: 101%;
+  scale: 105%;
   transition: var(--transition);
 }
 
@@ -323,7 +330,7 @@ video {
 
 form {
   margin: 0 auto;
-  width: 400px;
+  width: 95%;
   background-color: var(--news-flash);
   padding: 1rem;
   color: var(--watchdog-white);
@@ -333,18 +340,20 @@ form {
   box-shadow: var(--shadow);
 }
 
-label {
-  margin-bottom: -0.75rem;
-}
-
 #name,
 #mobile {
   padding: 0.5rem;
 }
 
+.text-input {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
+}
+
 fieldset {
   display: grid;
-  gap: 1rem;
+  gap: 16px;
   padding: 0.5rem;
   border: 1px solid var(--blue-bulletin);
 }
@@ -374,12 +383,14 @@ input[type="checkbox"]:hover {
   text-transform: uppercase;
   margin-bottom: 1rem;
   box-shadow: var(--shadow);
+  transition: var(--transition);
 }
 
 #submit:hover {
   cursor: pointer;
   background-color: var(--watchdog-white);
   color: var(--blue-bulletin);
+  transition: var(--transition);
 }
 
 footer {
@@ -395,37 +406,40 @@ footer ul {
   gap: 1rem;
 }
 
-footer a {
+footer li {
   background-color: var(--news-flash);
+  border: 1px solid var(--news-flash);
   color: var(--watchdog-white);
   text-align: center;
   text-transform: uppercase;
   padding: 1rem 0.5rem;
+  transition: var(--transition);
 }
 
-footer a:hover {
-  scale: 105%;
+footer li:hover {
+  background-color: var(--blue-bulletin);
   transition: var(--transition);
   cursor: pointer;
+}
+
+footer p {
+  padding-top: 1rem;
 }
 
 /* ///ADD/// Global Text Styles */
 h2 {
   font-family: var(--font-heading);
   font-size: 1.5rem;
-  color: var(--truth-text);
   margin: 2rem auto auto 0;
 }
 
 h3 {
   font-family: var(--font-heading);
   font-size: 1.2rem;
-  color: var(--truth-text);
 }
 
 p {
   font-family: var(--font-body);
-  color: var(--truth-text);
 }
 
 #about h2,
@@ -447,7 +461,6 @@ blockquote {
 
 #breaking h3,
 #breaking p {
-  color: var(--watchdog-white);
   line-height: 1.75rem;
 }
 
@@ -472,10 +485,6 @@ footer p {
 footer p {
   text-align: center;
   margin-top: 1rem;
-}
-
-footer li {
-  margin-bottom: 2rem;
 }
 
 /* ///ADD/// medium styles 620px */
@@ -514,8 +523,13 @@ footer li {
     grid-column: 1/-1;
   }
 
-  .video-card, video {
-    width: 16rem;
+  .video-card {
+    width: calc(100% - 50px);
+    height: auto;
+  }
+
+  video {
+    width: calc(100% - 10px);
   }
 
   #featured {
@@ -529,19 +543,12 @@ footer li {
   }
 
   .news-card {
-    width: 16rem;
+    width: calc(100% - 50px);
   }
 
   form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 33rem;
-  }
-
-  .text-input {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
   }
 
   fieldset {
@@ -557,24 +564,9 @@ footer li {
 
 /* ///ADD/// large styles 920px */
 @media only screen and (min-width: 920px) {
-  header, main {
-    padding: 1rem 3rem;
-  }
-
-  .video-card, video {
-    width: 23rem;
-  }
 
   #featured {
     grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .news-card {
-    width: 15rem;
-  }
-
-  form {
-    width: 50rem;
   }
 
   fieldset {
@@ -584,21 +576,41 @@ footer li {
 
 /* ///ADD/// x-large styles 1024px */
 @media only screen and (min-width: 1024px) {
-  header, main {
-    padding: 1rem 5rem;
-  }
-  
-  .video-card, video {
-    width: 25rem;
-  }
 
-  .news-card {
-    width: 15rem;
+  header,
+  main {
+    padding: 1rem 15%;
   }
 }
 
 /* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
+@media (prefers-color-scheme: light) {
+  main {
+    background-color: var(--watchdog-white);
+  }
 
+  main h2,
+  main h3,
+  main p,
+  blockquote {
+    color: var(--truth-text);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  main {
+    background-color: var(--truth-text);
+  }
+
+  main h2,
+  main h3,
+  main p,
+  blockquote {
+    color: var(--watchdog-white);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {}
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
 @supports (selector(:has(*))) {}
