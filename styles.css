@@ -154,17 +154,6 @@ table {
   --transition: all 0.5s ease;
 }
 
-/* Manual Light/Dark Mode Styles*/
-body.light-mode {
-  background-color: var(--watchdog-white);
-  color: var(--truth-text);
-}
-
-body.dark-mode {
-  background-color: var(--truth-text);
-  color: var(--watchdog-white);
-}
-
 #theme-toggle {
   position: absolute;
   top: 1rem;
@@ -199,14 +188,14 @@ header {
 }
 
 h1 {
-  font-family: 'Merriweather';
+  font-family: var(--font-heading);
   color: var(--watchdog-white);
   font-size: 3rem;
   font-weight: 300;
 }
 
 header p {
-  font-family: 'Merriweather';
+  font-family: var(--font-heading);
   color: var(--watchdog-white);
   font-size: 0.8rem;
   margin: 1rem 0;
@@ -431,15 +420,18 @@ h2 {
   font-family: var(--font-heading);
   font-size: 1.5rem;
   margin: 2rem auto auto 0;
+  color: var(--truth-text);
 }
 
 h3 {
   font-family: var(--font-heading);
   font-size: 1.2rem;
+  color: var(--truth-text);
 }
 
 p {
   font-family: var(--font-body);
+  color: var(--truth-text);
 }
 
 #about h2,
@@ -452,6 +444,7 @@ blockquote {
   font-size: 0.9rem;
   font-weight: 600;
   text-align: center;
+  color: var(--truth-text);
 }
 
 #breaking h3 {
@@ -621,4 +614,21 @@ footer p {
   .mobile-nav:has(#menu-toggle:checked) .menu {
     display: block;
   }
+}
+
+/* Manual Light/Dark Mode Styles*/
+body.light-mode main {
+  background-color: var(--watchdog-white);
+}
+
+body.light-mode main h2, body.light-mode .news-card h3, body.light-mode main p {
+    color: var(--truth-text);
+}
+
+body.dark-mode main {
+  background-color: var(--truth-text);
+}
+
+body.dark-mode main h2, body.dark-mode .news-card h3, body.dark-mode main p {
+    color: var(--watchdog-white);
 }
