@@ -621,7 +621,7 @@ body.light-mode main {
   background-color: var(--watchdog-white);
 }
 
-body.light-mode main h2, body.light-mode .news-card h3, body.light-mode main p {
+body.light-mode main h2, body.light-mode .news-card h3, body.light-mode #about p, body.light-mode .news-card p, body.light-mode blockquote {
     color: var(--truth-text);
 }
 
@@ -629,6 +629,6 @@ body.dark-mode main {
   background-color: var(--truth-text);
 }
 
-body.dark-mode main h2, body.dark-mode .news-card h3, body.dark-mode main p {
+body.dark-mode main h2, body.dark-mode .news-card h3, body.dark-mode #about p, body.dark-mode .news-card p, body.dark-mode blockquote {
     color: var(--watchdog-white);
 }
